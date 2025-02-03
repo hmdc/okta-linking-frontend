@@ -25,5 +25,3 @@ logs
 
 # OS Generated files
 .DS_Store
-
-vite.config.main.js
