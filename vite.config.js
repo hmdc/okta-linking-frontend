@@ -1,12 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path';
-import getEnvModule from './env'
+//import getEnvModule from './env'
 import dns from 'dns'
 
 dns.setDefaultResultOrder('verbatim')
 
-getEnvModule().setEnvironmentVarsFromDir(__dirname);
+//getEnvModule().setEnvironmentVarsFromDir(__dirname);
 
 process.env.CLIENT_ID = process.env.SPA_CLIENT_ID || process.env.CLIENT_ID;
 
@@ -24,7 +24,7 @@ const env = {};
   'SUPPORT_URL',
 ].forEach((key) => {
   if (!process.env[key]) {
-    throw new Error(`Environment variable ${key} must be set. See README.md`);
+    //throw new Error(`Environment variable ${key} must be set. See README.md`);
   }
   env[key] = process.env[key];
 });
@@ -33,7 +33,7 @@ const env = {};
 export default defineConfig({
   plugins: [react()],
   define: {
-    'process.env': env
+    'process.env2': env
   },
   resolve: {
     alias: {
