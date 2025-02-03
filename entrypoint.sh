@@ -1,14 +1,14 @@
 #!/bin/sh
 
 # Create a .env file dynamically based on runtime environment variables
-echo "VITE_ISSUER=${ISSUER:-defaultValue}" > /app/.env
-echo "VITE_CLIENT_ID=${CLIENT_ID:-defaultValue}" >> /app/.env
-echo "VITE_EXT_AUTH_URL=${EXT_AUTH_URL:-defaultValue}" >> /app/.env
-echo "VITE_EXT_CLIENT_ID=${EXT_CLIENT_ID:-defaultValue}" >> /app/.env
-echo "VITE_EXT_REDIRECT_URI=${EXT_REDIRECT_URI:-defaultValue}" >> /app/.env
-echo "VITE_LINK_API=${LINK_API:-defaultValue}" >> /app/.env
-echo "VITE_SUPPORT_EMAIL=${SUPPORT_EMAIL:-defaultValue}" >> /app/.env
-echo "VITE_SUPPORT_URL=${SUPPORT_URL:-defaultValue}" >> /app/.env
+echo "ISSUER=${ISSUER:-defaultValue}" > /app/.env
+echo "CLIENT_ID=${CLIENT_ID:-defaultValue}" >> /app/.env
+echo "EXT_AUTH_URL=${EXT_AUTH_URL:-defaultValue}" >> /app/.env
+echo "EXT_CLIENT_ID=${EXT_CLIENT_ID:-defaultValue}" >> /app/.env
+echo "EXT_REDIRECT_URI=${EXT_REDIRECT_URI:-defaultValue}" >> /app/.env
+echo "LINK_API=${LINK_API:-defaultValue}" >> /app/.env
+echo "SUPPORT_EMAIL=${SUPPORT_EMAIL:-defaultValue}" >> /app/.env
+echo "SUPPORT_URL=${SUPPORT_URL:-defaultValue}" >> /app/.env
 
 # Print the created .env file (for debugging purposes)
 echo "Generated .env file:"

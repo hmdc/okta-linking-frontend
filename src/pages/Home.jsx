@@ -46,7 +46,7 @@ const Home = () => {
   };
 
   const handleFASRCSupport = () => {
-    return `mailto:${import.meta.env.VITE_SUPPORT_EMAIL}?subject=FASRC%20HarvardKey%20Linker`;
+    return `mailto:${process.env.SUPPORT_EMAIL}?subject=FASRC%20HarvardKey%20Linker`;
   }
 
   const getErrorMailToLink = (error) => {
@@ -60,17 +60,17 @@ const Home = () => {
       Error Message: ${error}
       `);
 
-    return `mailto:${import.meta.env.VITE_SUPPORT_EMAIL}?subject=${subject}&body=${body}`;
+    return `mailto:${process.env.SUPPORT_EMAIL}?subject=${subject}&body=${body}`;
   };
 
   // External IDP Login 
   const extLogin = async () => {
     // Create the Authorization URL
     const authorizationUrl = new URL(import.meta.env.VITE_EXT_AUTH_URL);
-    authorizationUrl.searchParams.append("client_id", import.meta.env.VITE_EXT_CLIENT_ID);
+    authorizationUrl.searchParams.append("client_id", process.env.EXT_CLIENT_ID);
     authorizationUrl.searchParams.append("response_type", "code");
     authorizationUrl.searchParams.append("scope", "openid profile email");
-    authorizationUrl.searchParams.append("redirect_uri", import.meta.env.VITE_EXT_REDIRECT_URI);
+    authorizationUrl.searchParams.append("redirect_uri", process.env.EXT_REDIRECT_URI);
     authorizationUrl.searchParams.append("state", crypto.randomUUID());
 
     // ext_oidc_state variable is set for security purposes and will be confirmed when we get a response back (in ExtAuthCallback.jsx)
@@ -83,7 +83,7 @@ const Home = () => {
     return <Loading />;
   }
 
-  const issuer = import.meta.env.VITE_ISSUER;
+  const issuer = process.env.ISSUER;
 
   return (
     <div className="center-container">

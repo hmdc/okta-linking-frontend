@@ -39,7 +39,7 @@ const Navbar = () => {
         <Container>
           {import.meta.env.VITE_SUPPORT_URL !== "" && (
             <Menu.Item id="help-button">
-              <Link to={import.meta.env.VITE_SUPPORT_URL}>Help</Link>
+              <Link to={process.env.SUPPORT_URL}>Help</Link>
             </Menu.Item>
           )}
           {authState && authState?.isAuthenticated && !userInfo?.eduPersonPrincipalName && (
