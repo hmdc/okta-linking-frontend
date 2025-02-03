@@ -83,7 +83,6 @@ const Home = () => {
     return <Loading />;
   }
 
-  const davidTest = import.meta.env.VITE_DAVID_TEST;
   const issuer = import.meta.env.VITE_ISSUER;
 
   return (
@@ -95,9 +94,6 @@ const Home = () => {
         <h1 className="title">FASRC HarvardKey Linker</h1>
       </div>
       <div>
-        <h2 className="title">
-          Vite David Test: {davidTest}
-        </h2>
         <h2 className="title">
           Issuer: {issuer}
         </h2>
