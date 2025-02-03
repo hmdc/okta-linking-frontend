@@ -10,10 +10,6 @@ echo "LINK_API=${LINK_API:-defaultValue}" >> /app/.env
 echo "SUPPORT_EMAIL=${SUPPORT_EMAIL:-defaultValue}" >> /app/.env
 echo "SUPPORT_URL=${SUPPORT_URL:-defaultValue}" >> /app/.env
 
-# Print the created .env file (for debugging purposes)
-echo "Generated .env file:"
-cat /app/.env
-
 # Build application injecting environment variables from .env
 cd /app && npm run build
 
