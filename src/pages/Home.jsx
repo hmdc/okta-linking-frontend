@@ -66,7 +66,7 @@ const Home = () => {
   // External IDP Login 
   const extLogin = async () => {
     // Create the Authorization URL
-    const authorizationUrl = new URL(import.meta.env.VITE_EXT_AUTH_URL);
+    const authorizationUrl = new URL(process.env.EXT_AUTH_URL);
     authorizationUrl.searchParams.append("client_id", process.env.EXT_CLIENT_ID);
     authorizationUrl.searchParams.append("response_type", "code");
     authorizationUrl.searchParams.append("scope", "openid profile email");
