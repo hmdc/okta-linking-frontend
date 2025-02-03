@@ -18,4 +18,13 @@ RUN npm run build
 RUN npm install -g serve
 
 # Serve the application
-CMD ["serve", "-s", "dist", "-l", "3000"]
+#CMD ["serve", "-s", "dist", "-l", "3000"]
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Expose the port Vite serves on
+EXPOSE 3000
+
+# Run the entrypoint script
+CMD ["/entrypoint.sh"]
