@@ -20,5 +20,6 @@ RUN chmod +x /entrypoint.sh
 # Expose the port Vite serves on
 EXPOSE 3000
 
-# Run the entrypoint script to set env variables, build and serve application
+# Run the entrypoint script to build and serve the application
+# This allows loading env variables at runtime from the container space
 CMD ["/entrypoint.sh"]
