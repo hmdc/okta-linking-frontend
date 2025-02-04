@@ -83,8 +83,6 @@ const Home = () => {
     return <Loading />;
   }
 
-  const issuer = process.env.ISSUER;
-
   return (
     <div className="center-container">
       <div>
@@ -92,11 +90,6 @@ const Home = () => {
       </div>
       <div>
         <h1 className="title">FASRC HarvardKey Linker</h1>
-      </div>
-      <div>
-        <h2 className="title">
-          Issuer: {issuer}
-        </h2>
       </div>
       <div>
         <div className="content">
