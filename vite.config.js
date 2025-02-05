@@ -1,18 +1,16 @@
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path';
-import dotenv from 'dotenv'
 import dns from 'dns'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ _, mode }) => {
-  dotenv.config({path: '.okta.env'})
 
   const env = loadEnv(mode, process.cwd(), '')
 
   env.CLIENT_ID = env.SPA_CLIENT_ID || env.CLIENT_ID
 
-  const filteredEnv = {}
+  const customEnv = {}
 
   const variables = [
       'ISSUER',
@@ -29,7 +27,7 @@ export default defineConfig(({ _, mode }) => {
     if (!env[key]) {
       throw new Error(`Environment variable ${key} must be set`)
     }
-    filteredEnv[key] = env[key]
+    customEnv[key] = env[key]
   })
 
   dns.setDefaultResultOrder('verbatim')
@@ -42,7 +40,7 @@ export default defineConfig(({ _, mode }) => {
       }
     },
     define: {
-      'process.env': filteredEnv
+      'process.env': customEnv
     },
     test: {
       environment: 'jsdom',

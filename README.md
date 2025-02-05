@@ -6,10 +6,11 @@ Notes:
 
 Amendments:
 * Configuration:
-  1. Copy `.example.env` to `.development.env` and fill in values.
-  2. Edit `env/env.js` to load `.development.env` instead of production env (FIXME: this should be paramaterized).
+  1. Copy `.example.env` to `.env` and fill in values.
   2. To include the env in the Docker build, edit the `.dockerignore` and uncomment its non-exclusion. ONLY do this in a local dev env where you will NOT push or share the build image!
-* To start the app use `npm install` instead of `npm ci`
+* To install the required libraries, use `npm install` instead of `npm ci`
+* To start the app locally use `npm run start`
+* To start the app locally in development mode, use `npm run preview`
 * The test suite is currently untested.
 
 Original `README.md` follows...
