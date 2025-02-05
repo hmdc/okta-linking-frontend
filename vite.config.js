@@ -10,8 +10,7 @@ export default defineConfig(({ _, mode }) => {
 
   const env = loadEnv(mode, process.cwd(), '')
 
-  process.env.CLIENT_ID = process.env.SPA_CLIENT_ID || process.env.CLIENT_ID
-  Object.assign(env, process.env)
+  env.CLIENT_ID = env.SPA_CLIENT_ID || env.CLIENT_ID
 
   const filteredEnv = {}
 
@@ -28,7 +27,7 @@ export default defineConfig(({ _, mode }) => {
 
   variables.forEach((key) => {
     if (!env[key]) {
-      throw new Error(`Environment variable ${key} must be set in .okta.env`)
+      throw new Error(`Environment variable ${key} must be set`)
     }
     filteredEnv[key] = env[key]
   })
