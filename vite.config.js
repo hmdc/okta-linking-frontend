@@ -1,7 +1,6 @@
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path';
-import dns from 'dns'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ _, mode }) => {
@@ -29,8 +28,6 @@ export default defineConfig(({ _, mode }) => {
     }
     customEnv[key] = env[key]
   })
-
-  dns.setDefaultResultOrder('verbatim')
 
   return {
     plugins: [react()],
