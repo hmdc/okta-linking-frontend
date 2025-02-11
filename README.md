@@ -6,7 +6,7 @@ Notes:
 
 Amendments:
 * Configuration:
-  1. Copy `.example.env` to `.env` and fill in values.
+  1. Copy `.example.env` to `.okta.env` and fill in values.
   2. To include the env in the Docker build, edit the `.dockerignore` and uncomment its non-exclusion. ONLY do this in a local dev env where you will NOT push or share the build image!
 * To install the required libraries, use `npm install` instead of `npm ci`
 * To start the app locally use `npm run start`
