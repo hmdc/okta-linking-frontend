@@ -100,7 +100,7 @@ const Home = () => {
             && (
               <div className="content">
                 <div className="container-with-border error">
-                  <p>An Unexprected Error Occurred</p>
+                  <p>An Unexpected Error Occurred</p>
                 </div>
                 <div>
                   <Button id="report_error-button" color="red" as="a" href={getErrorMailToLink(error)}>
